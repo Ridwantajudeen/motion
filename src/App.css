@@ -1,0 +1,62 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  width: 430px;
+  /* border: solid; */
+  
+  color:black;
+  
+}
+.Header{
+  border-radius: 0 0 120px 120px;
+ 
+  position: relative;
+}
+.logo{
+  height: 18px;
+}
+.head{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.head button{
+  background-color:#301934 ;
+  color: #ffffff;
+border: none;
+border-radius: 15px;
+width: 80px;
+height: 25px;
+}
+.head button:hover{
+  
+width: 85px;
+
+}
+.location{
+  margin-top: 50px;
+  padding: 20px;
+}
+.location h3{
+  font-weight: bolder;
+  font-size: x-large;
+  color: #301934;
+}
+.location input{
+ width: 250px;
+ text-align: center;
+ height: 30px;
+ border: none;
+ margin-top: 10px;
+ background-color: #ffffff;
+}
+.location button{
+ width: 100px;
+ text-align: center;
+ height: 30px;
+ border: none;
+ margin-top: 10px;
+ background-color: #ffffff;
+}
