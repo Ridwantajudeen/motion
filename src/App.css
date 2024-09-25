@@ -2,10 +2,22 @@
   padding: 0;
   margin: 0;
 }
+@font-face{
+  font-family: 'Hanken Grotesk';
+  src: url('fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'Hanken Grotesk Italic';
+  src: url('fonts/HankenGrotesk-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
 body{
-  width: 430px;
+  max-width: 430px;
   /* border: solid; */
-  
+   font-family: 'Hanken Grotesk', sans-serif;
   color:black;
   
 }
@@ -58,5 +70,6 @@ width: 85px;
  height: 30px;
  border: none;
  margin-top: 10px;
+ color: #301934;
  background-color: #ffffff;
 }
