@@ -38,13 +38,15 @@ body{
   background-color:#301934 ;
   color: #ffffff;
 border: none;
+font-weight: bolder;
 border-radius: 15px;
 width: 80px;
 height: 25px;
 }
 .head button:hover{
-  
-width: 85px;
+  color:#301934 ;
+  background-color: #ffffff;
+
 
 }
 .location{
@@ -52,24 +54,32 @@ width: 85px;
   padding: 20px;
 }
 .location h3{
-  font-weight: bolder;
-  font-size: x-large;
+  font-weight: 900;
+  font-size: 35px;
   color: #301934;
 }
 .location input{
  width: 250px;
  text-align: center;
- height: 30px;
+ height: 40px;
  border: none;
- margin-top: 10px;
+ border-radius: 10px;
+ font-weight: bolder;
+ margin-top: 7px;
  background-color: #ffffff;
 }
 .location button{
  width: 100px;
  text-align: center;
- height: 30px;
+ height: 40px;
+ border-radius: 10px;
+ font-weight: bolder;
  border: none;
  margin-top: 10px;
- color: #301934;
- background-color: #ffffff;
+ background-color:#301934 ;
+  color: #ffffff;
+}
+.location button:hover{
+  color: #301934;
+  background-color: #ffffff;
 }
