@@ -50,12 +50,12 @@ height: 25px;
 
 }
 .location{
-  margin-top: 50px;
+  margin-top: 25px;
   padding: 20px;
 }
-.location h3{
-  font-weight: 900;
-  font-size: 35px;
+.location h1{
+  font-weight: 1500;
+  font-size: 30px;
   color: #301934;
 }
 .location input{

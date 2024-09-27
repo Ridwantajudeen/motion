@@ -15,7 +15,7 @@ function Header(){
             <button>Login</button>
             </div>
             <div className='location'>
-                <h3>Where do you want us to deliver to?</h3>
+                <h1>Where do you want us to deliver to?</h1>
                 <input type='text' placeholder='ENTER YOUR ADDRESS HERE'/><br />
                 <button>SEARCH</button>
             </div>
