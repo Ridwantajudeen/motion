@@ -19,14 +19,14 @@ function Hero(){
             <div className='card'>
                 <img src={bowl} className='bowl' alt=''/>
                 <p className='restaurant'>Take your food and pastries beyond boundaries by registering
-                 your restaurant and catering with us. give people the opportunity to taste your delicacy 
+                 your restaurant and catering with us. Give people the opportunity to taste your delicacy 
                 </p><br />
                 <a href='/#'>Register now </a>
 
             </div>
             <div className='card'>
                 <img src={bike} className='bike' alt=''/>
-                <p className='restaurant'>Earn extra income on motion as you deliver food to our customers. register with us now and get paid every time you make a delivery. 
+                <p className='restaurant'>Earn extra income on motion as you deliver food to our customers. Register with us now and get paid every time you make a delivery. 
                 </p><br />
                 <a href='/#'>Register now </a>
 
