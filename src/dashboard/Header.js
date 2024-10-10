@@ -7,7 +7,8 @@ function Header(){
         style={{
             backgroundImage: `url(${burger})`,
             backgroundSize: 'cover',
-            height: '400px'
+            height: '300px',
+            filter: 'brightness(0.8)',
         }}
         >
             <div className='head'>

@@ -22,7 +22,7 @@ body{
   
 }
 .Header{
-  border-radius: 0 0 120px 120px;
+  /* border-radius: 0 0 120px 120px; */
  
   position: relative;
 }
@@ -45,9 +45,7 @@ height: 25px;
 }
 .head button:hover{
   color:#301934 ;
-  background-color: #ffffff;
-
-
+  background-color:#ffffff;
 }
 .location{
   margin-top: 20px;
@@ -82,4 +80,36 @@ height: 25px;
 .location button:hover{
   color: #301934;
   background-color: #ffffff;
+}
+
+.hero{
+  background-color: #f0ebf4;
+  /* width: 90%; */
+  /* border-radius: 10px; */
+  padding: 10px;
+  text-align: center;
+
+}
+
+.hero img{
+  height:40px;
+}
+.hero .card{
+  background-color: #ffffff;
+  width: 95%;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.03),
+  0px 0px 10px rgb(0, 0, 0, 0.03),
+  10px 0px 10px rgb(0, 0, 0, 0.03),
+  -10px 0px 10px rgb(0, 0, 0, 0.03);
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.hero .card a{
+  color: inherit;
+
+}
+.hero .card a:hover{
+  color: #301934;
 }
