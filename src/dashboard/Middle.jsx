@@ -27,14 +27,20 @@ function Middle() {
 
     <div>
       {/* The text that will be copied when clicked */}
-      <button onClick={handleCopy} >
+      <button onClick={handleCopy} style={{
+       marginTop:'5px'
+       
+      }}>
         Cupon Code
       </button>
 
       {/* Display success or failure message */}
       {copySuccess && <p>{copySuccess}</p>}
     </div>
-    <p>Enjoy 15% off your first delivery fee. Ball on us😘</p>
+    <p style={{
+       marginTop:'5px'
+       
+      }}>Enjoy 15% off your first delivery fee. Ball on us😘</p>
     </div>
     </div>
   );
