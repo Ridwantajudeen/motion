@@ -23,7 +23,7 @@ function Middle() {
       }}>
         <div id='middle'>
     <h2>Enjoy our discount on your first order</h2>
-    <p>Click the button below to copy your coupon code and paste at the point of checkout</p>
+    <p>Click the button below to copy your coupon code and paste at the point of checkout.</p>
 
     <div>
       {/* The text that will be copied when clicked */}
