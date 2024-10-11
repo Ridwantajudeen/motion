@@ -31,7 +31,7 @@ function Middle() {
        marginTop:'5px'
        
       }}>
-        Cupon Code
+        Coupon Code
       </button>
 
       {/* Display success or failure message */}
