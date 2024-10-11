@@ -368,7 +368,7 @@ height: 25px;
   border: 1px solid #ccc;
   outline: none;
   margin-bottom: 10px;
-  
+  font-size: 13px;
 }
 .login form button{
   width:75%;
@@ -429,6 +429,7 @@ height: 25px;
   border: 1px solid #ccc;
   outline: none;
   margin-bottom: 10px;
+  font-size: 13px;
   
 }
 .signup form button{
