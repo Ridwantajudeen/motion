@@ -114,27 +114,27 @@ height: 25px;
   color: #301934;
 }
 .slider-container {
-  width: 100%; /* Adjust this to control the visible width */
-  overflow: hidden; /* Hide the overflowing part */
-  background-color: #f0ebf4; /* Optional background */
-  white-space: nowrap; /* Ensure text doesn't wrap */
+  width: 100%; 
+  overflow: hidden; 
+  background-color: #f0ebf4; 
+  white-space: nowrap; 
   border: 1px solid #ddd;
 }
 
 .sliding-text {
   display: inline-block;
   padding: 10px;
-  white-space: nowrap; /* Prevent text wrapping */
-  animation: slide 30s linear infinite; /* Adjust the duration */
+  white-space: nowrap; 
+  animation: slide 30s linear infinite; 
 }
 .slide-img{
   margin-right: 5px;
 }
 .sliding-text div {
   display: inline-block;
-  margin-right: 50px; /* Space between texts */
-  font-size: 20px; /* Adjust text size */
-  color: #301934; /* Text color */
+  margin-right: 50px; 
+  font-size: 20px; 
+  color: #301934; 
   width: fit-content;
   border-radius: 10px;
   background-color: rgba(240, 235, 244, 0.5);
@@ -147,9 +147,50 @@ height: 25px;
 
 @keyframes slide {
   0% {
-    transform: translateX(5%); /* Start offscreen */
+    transform: translateX(5%); 
   }
   100% {
-    transform: translateX(-100%); /* End offscreen */
+    transform: translateX(-100%); 
   }
+}
+.middle{
+  background-color: #fff9c4;
+  padding: 20px;
+}
+#middle{
+  
+  width: 95%;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.03),
+  0px 0px 10px rgb(0, 0, 0, 0.03),
+  10px 0px 10px rgb(0, 0, 0, 0.03),
+  -10px 0px 10px rgb(0, 0, 0, 0.03);
+  border-radius: 10px;
+  padding: 15px;
+}
+#middle h2{
+  color: #6e3278;
+  width: 90%;
+  margin-bottom: 20px;
+}
+#middle p{
+  width: 95%;
+  margin-bottom: 20px;
+}
+#middle button{
+  color: #6e3278;
+  border: none;
+  height: 40px;
+  padding: 5px;
+  width: 150px;
+  font-weight: bolder;
+  background-color: #fff176;
+  border-radius: 8px;
+  font-size: large;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.03),
+  0px 0px 10px rgb(0, 0, 0, 0.03),
+  10px 0px 10px rgb(0, 0, 0, 0.03),
+  -10px 0px 10px rgb(0, 0, 0, 0.03);
+}
+#middle button:hover{
+  background-color: #ffffff;
 }
