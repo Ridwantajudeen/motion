@@ -119,13 +119,15 @@ height: 25px;
   background-color: #f0ebf4; 
   white-space: nowrap; 
   border: 1px solid #ddd;
+  border: none; 
 }
 
 .sliding-text {
   display: inline-block;
   padding: 10px;
   white-space: nowrap; 
-  animation: slide 30s linear infinite; 
+  animation: slide 30s linear infinite;
+  
 }
 .slide-img{
   margin-right: 5px;
@@ -156,6 +158,7 @@ height: 25px;
 .middle{
   background-color: #fff9c4;
   padding: 20px;
+  border: none; 
 }
 #middle{
   
@@ -170,7 +173,7 @@ height: 25px;
 #middle h2{
   color: #6e3278;
   width: 90%;
-  margin-bottom: 10px;
+  margin-bottom: px;
 }
 #middle p{
   width: 95%;
