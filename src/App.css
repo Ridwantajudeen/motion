@@ -328,4 +328,136 @@ height: 25px;
   margin-top: 20px;
   font-size: 14px;
   color: #ccc;
+  
 }
+.login{
+  display: grid;
+  place-items: center;
+  background-color: #f0ebf4;
+  padding: 50px 20px 30px 20px;
+}
+.login-card{
+  background-color: #ffffff;
+  width: 70%;
+  padding: 30px 10px 20px 10px;
+  border-radius: 10px;
+}
+#login-logo{
+  text-align: center;
+}
+.login-logo{
+  height: 30px;
+  
+}
+
+.login form{
+ padding: 10px;
+ display: grid;
+  place-items: center;
+  margin-top: 25px;
+}
+.login form input{
+  width: 90%;
+  height: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-bottom: 10px;
+  
+}
+.login form button{
+  width:75%;
+  margin-top: 25px;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  background-color: #6e3278;
+  font-weight: bolder;
+  font-size: 16px;
+}
+.login .links{
+  text-align: center;
+  margin-top: 10px;
+}
+.signup{
+  display: grid;
+  place-items: center;
+  background-color: #f0ebf4;
+  padding: 50px 20px 30px 20px;
+}
+.signup-card{
+  background-color: #ffffff;
+  width: 80%;
+  padding: 30px 10px 20px 10px;
+  border-radius: 10px;
+}
+#signup-logo{
+  text-align: center;
+}
+.signup-logo{
+  height: 30px;
+  
+}
+
+.signup form{
+ padding: 10px;
+ display: grid;
+  place-items: center;
+  margin-top: 25px;
+}
+.signup form input{
+  width: 90%;
+  height: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-bottom: 10px;
+  
+}
+.signup form button{
+  width:75%;
+  margin-top: 25px;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  color: #ffffff;
+  background-color: #6e3278;
+  font-weight: bolder;
+  font-size: 16px;
+}
+.signup .links{
+  text-align: center;
+  margin-top: 10px;
+}
+.privacy-checkbox {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px; /* Smaller font size for label */
+}
+
+.privacy-checkbox {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px; /* Smaller font size for label */
+}
+
+.privacy-checkbox input[type="checkbox"] {
+  width: 16px; /* Smaller size for the checkbox */
+  height: 16px;
+  margin-right: 8px; /* Space between the checkbox and text */
+}
+
+.privacy-checkbox input{
+  margin-top: 10px;
+}
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+

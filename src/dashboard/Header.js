@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import logo from './images/motion-logo.png';
 import burger from './images/burger1.JPG';
+import { useNavigate } from 'react-router-dom';
 
 
 function Header() {
+  const navigate = useNavigate();
+
+  const goToLogin = () => {
+    navigate('/login');
+  };
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
@@ -39,7 +45,7 @@ function Header() {
       >
         <div className="head">
           <img src={logo} className="logo" alt="logo" />
-          <button>Login</button>
+          <button onClick={goToLogin} >Login</button>
         </div>
         <div className="location">
           <h1>Where do you want us to deliver to?</h1>

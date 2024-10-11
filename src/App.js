@@ -1,12 +1,24 @@
 
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './dashboard/Dashboard';
+import Footer from './Footer';
+import Login from './Login';
+import Signup from './Signup';
 
 
 function App() {
   return (
     <div className="App">
-      <Dashboard/>
+      <Router>
+       <Routes>
+          <Route path="/" element={<Dashboard/>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+         
+        </Routes>
+        </Router>
+      <Footer/>
     </div>
   );
 }

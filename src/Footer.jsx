@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import motion from './images/Motion-White.png'
+import motion from './dashboard/images/Motion-White.png';
+
 
 function Footer() {
   const [email, setEmail] = useState('');
@@ -34,10 +35,10 @@ function Footer() {
 
         <div className="footer-links">
           <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li><br />
-            <li><a href="#">Terms of Service</a></li>
+            <li><a href="/#">About Us</a></li>
+            <li><a href="/#">Contact</a></li>
+            <li><a href="/#">Privacy Policy</a></li><br />
+            <li><a href="/#">Terms of Service</a></li>
           </ul>
         </div>
       </div>
