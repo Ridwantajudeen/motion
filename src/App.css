@@ -47,6 +47,22 @@ height: 25px;
   color:#301934 ;
   background-color:#ffffff;
 }
+.sticky-header {
+  position: fixed;
+  top: -100px; /* Start hidden above the viewport */
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.9); 
+  height: 30px;
+  padding: 15px;
+  text-align: center;
+  transition: top 0.3s ease-in-out;
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+.sticky-header.visible {
+  top: 0; /* Slide into view when scrolling past the main header */
+}
+
 .location{
   margin-top: 20px;
   padding: 20px;
@@ -78,6 +94,42 @@ height: 25px;
   color: #ffffff;
 }
 .location button:hover{
+  color: #301934;
+  background-color: #ffffff;
+}
+.location-stick{
+ display: flex; 
+ justify-content: space-around;
+  
+}
+.location-stick h1{
+  font-weight: 1500;
+  font-size: 20px;
+  color: #301934;
+}
+.location-stick input{
+ width: 250px;
+ text-align: center;
+ height: 30px;
+ /* border: #301934; */
+ border-radius: 10px;
+ font-weight: bolder;
+ /* margin-top: 10px; */
+ 
+ background-color: #ffffff;
+}
+.location-stick button{
+ width: 100px;
+ text-align: center;
+ height: 30px;
+ border-radius: 10px;
+ font-weight: bolder;
+ border: none;
+ /* margin-top: 10px; */
+ background-color:#301934 ;
+  color: #ffffff;
+}
+.location-stick button:hover{
   color: #301934;
   background-color: #ffffff;
 }
