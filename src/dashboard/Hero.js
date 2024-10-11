@@ -1,6 +1,10 @@
 import React from 'react';
 import bowl from './images/drink.png'
 import bike from './images/fast-delivery.png'
+import fast from './images/food-delivery.png'
+import call from './images/help-call.png'
+import range from './images/distance.png'
+import pay from './images/cashless-payment.png'
 
 function Hero(){
     return(
@@ -32,6 +36,20 @@ function Hero(){
 
             </div>
             </div>
+            <div className="slider-container">
+      <div className="sliding-text">
+        <div>
+            <img src={fast} className='slide-img' alt=''/>
+            Fastest Delivery</div>
+        <div>
+        <img src={call} className='slide-img' alt=''/>24/7 Customer Support</div>
+        <div>
+        <img src={range} className='slide-img' alt=''/>Wide Range Delivert</div>
+        <div>
+        <img src={pay} className='slide-img' alt=''/>Multiple Payment Options</div>
+        
+      </div>
+    </div>
         </div>
     )
 }

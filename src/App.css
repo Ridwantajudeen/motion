@@ -102,7 +102,7 @@ height: 25px;
   10px 0px 10px rgb(0, 0, 0, 0.03),
   -10px 0px 10px rgb(0, 0, 0, 0.03);
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
   margin-top: 30px;
   margin-bottom: 40px;
 }
@@ -112,4 +112,43 @@ height: 25px;
 }
 .hero .card a:hover{
   color: #301934;
+}
+.slider-container {
+  width: 100%; /* Adjust this to control the visible width */
+  overflow: hidden; /* Hide the overflowing part */
+  background-color: #f0ebf4; /* Optional background */
+  white-space: nowrap; /* Ensure text doesn't wrap */
+  border: 1px solid #ddd;
+}
+
+.sliding-text {
+  display: inline-block;
+  padding: 10px;
+  white-space: nowrap; /* Prevent text wrapping */
+  animation: slide 50s linear infinite; /* Adjust the duration */
+}
+.slide-img{
+  margin-right: 5px;
+}
+.sliding-text div {
+  display: inline-block;
+  margin-right: 50px; /* Space between texts */
+  font-size: 20px; /* Adjust text size */
+  color: #301934; /* Text color */
+  width: fit-content;
+  background-color: rgba(240, 235, 244, 0.5);
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.01),
+0px 0px 10px rgb(0, 0, 0, 0.01),
+10px 0px 10px #00000003,
+-10px 0px 10px rgb(0, 0, 0, 0.01);
+  padding:10px
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(5%); /* Start offscreen */
+  }
+  100% {
+    transform: translateX(-100%); /* End offscreen */
+  }
 }
