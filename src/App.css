@@ -341,6 +341,10 @@ height: 25px;
   width: 70%;
   padding: 30px 10px 20px 10px;
   border-radius: 10px;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.03),
+  0px 0px 10px rgb(0, 0, 0, 0.03),
+  10px 0px 10px rgb(0, 0, 0, 0.03),
+  -10px 0px 10px rgb(0, 0, 0, 0.03);
 }
 #login-logo{
   text-align: center;
@@ -378,6 +382,11 @@ height: 25px;
   font-weight: bolder;
   font-size: 16px;
 }
+.login form button:hover{
+  background-color: #ffffff;
+  color: #6e3278;
+  border: 1px solid #6e3278;
+}
 .login .links{
   text-align: center;
   margin-top: 10px;
@@ -393,6 +402,10 @@ height: 25px;
   width: 80%;
   padding: 30px 10px 20px 10px;
   border-radius: 10px;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.03),
+  0px 0px 10px rgb(0, 0, 0, 0.03),
+  10px 0px 10px rgb(0, 0, 0, 0.03),
+  -10px 0px 10px rgb(0, 0, 0, 0.03);
 }
 #signup-logo{
   text-align: center;
@@ -429,6 +442,11 @@ height: 25px;
   background-color: #6e3278;
   font-weight: bolder;
   font-size: 16px;
+}
+.signup form button:hover{
+  background-color: #ffffff;
+  color: #6e3278;
+  border: 1px solid #6e3278;
 }
 .signup .links{
   text-align: center;
