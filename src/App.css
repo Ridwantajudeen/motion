@@ -136,6 +136,7 @@ height: 25px;
   font-size: 20px; /* Adjust text size */
   color: #301934; /* Text color */
   width: fit-content;
+  border-radius: 10px;
   background-color: rgba(240, 235, 244, 0.5);
   box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.01),
 0px 0px 10px rgb(0, 0, 0, 0.01),
