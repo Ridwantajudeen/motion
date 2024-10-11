@@ -125,7 +125,7 @@ height: 25px;
   display: inline-block;
   padding: 10px;
   white-space: nowrap; /* Prevent text wrapping */
-  animation: slide 50s linear infinite; /* Adjust the duration */
+  animation: slide 40s linear infinite; /* Adjust the duration */
 }
 .slide-img{
   margin-right: 5px;

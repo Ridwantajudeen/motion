@@ -44,7 +44,7 @@ function Hero(){
         <div>
         <img src={call} className='slide-img' alt=''/>24/7 Customer Support</div>
         <div>
-        <img src={range} className='slide-img' alt=''/>Wide Range Delivert</div>
+        <img src={range} className='slide-img' alt=''/>Wide Range Delivery</div>
         <div>
         <img src={pay} className='slide-img' alt=''/>Multiple Payment Options</div>
         
