@@ -10,8 +10,8 @@ export default async function handler(req, res) {
 
     try {
       await client.connect();
-      const database = client.db('myself');
-      const collection = database.collection('users');
+      const database = client.db('motionDB');
+      const collection = database.collection('usermanagement');
 
       // Hash the password
       const hashedPassword = await bcrypt.hash(password, 10);
