@@ -1,7 +1,8 @@
 import { MongoClient } from 'mongodb';
 import bcrypt from 'bcryptjs';
 
-const uri = process.env.MONGODB_URI;
+const uri = 'mongodb+srv://myself:my-password01@motion.zgd1x.mongodb.net/motionDB?retryWrites=true&w=majority&appName=motion'
+// const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 
 export default async function handler(req, res) {
