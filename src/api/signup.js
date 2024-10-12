@@ -10,7 +10,7 @@ export default async function handler(req, res) {
 
     try {
       await client.connect();
-      const database = client.db('YOUR_DATABASE_NAME');
+      const database = client.db('myself');
       const collection = database.collection('users');
 
       // Hash the password
