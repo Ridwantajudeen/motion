@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import logo from './motion-logo.png'; // Ensure this path is correct
+import logo from './motion-logo.png';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth } from './firebase'; // Import Firebase auth
-import { signInWithEmailAndPassword } from 'firebase/auth'; // Firebase method for signing in
+import { auth } from './firebase'; // Import the auth object from firebase
+import { signInWithEmailAndPassword } from 'firebase/auth'; // Import Firebase auth function
 
 function Login() {
   const navigate = useNavigate(); // For redirection after successful login
@@ -26,14 +26,12 @@ function Login() {
     setError('');
 
     try {
-      // Sign in user using Firebase
+      // Use Firebase to sign in the user
       const userCredential = await signInWithEmailAndPassword(auth, formData.email, formData.password);
-      const user = userCredential.user;
-      
-      console.log('User logged in:', user);
+      console.log('User logged in:', userCredential.user);
       navigate('/dashboard'); // Redirect to dashboard after login
     } catch (error) {
-      setError('Error logging in. Please try again.');
+      setError('Error logging in. Please check your credentials and try again.'); // Error handling
     }
   };
 
