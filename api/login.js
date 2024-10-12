@@ -8,10 +8,15 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { email, password } = req.body;
 
+    // Basic input validation
+    if (!email || !password) {
+      return res.status(400).json({ message: 'Email and password are required.' });
+    }
+
     try {
       await client.connect();
-      const database = client.db('motionDB');
-      const collection = database.collection('usermanagement');
+      const database = client.db('motionDB'); // Use your database name
+      const collection = database.collection('usermanagement'); // Use your collection name
 
       // Find the user by email
       const user = await collection.findOne({ email });
@@ -28,6 +33,7 @@ export default async function handler(req, res) {
       // If successful, return user info or token
       res.status(200).json({ message: 'Login successful', userId: user._id });
     } catch (error) {
+      console.error('Error during login:', error); // Log the error
       res.status(500).json({ message: 'Internal server error', error: error.message });
     } finally {
       await client.close();

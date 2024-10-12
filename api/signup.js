@@ -8,10 +8,15 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { name, email, phone, password } = req.body;
 
+    // Basic input validation
+    if (!name || !email || !phone || !password) {
+      return res.status(400).json({ message: 'All fields are required.' });
+    }
+
     try {
       await client.connect();
-      const database = client.db('motionDB');
-      const collection = database.collection('usermanagement');
+      const database = client.db('motionDB'); // Use your database name
+      const collection = database.collection('usermanagement'); // Use your collection name
 
       // Hash the password
       const hashedPassword = await bcrypt.hash(password, 10);
@@ -20,6 +25,7 @@ export default async function handler(req, res) {
       const result = await collection.insertOne({ name, email, phone, password: hashedPassword });
       res.status(201).json({ message: 'User created successfully', userId: result.insertedId });
     } catch (error) {
+      console.error('Error during signup:', error); // Log the error
       res.status(500).json({ message: 'Internal server error', error: error.message });
     } finally {
       await client.close();
