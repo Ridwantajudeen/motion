@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import logo from './motion-logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Signup() {
+  const navigate = useNavigate(); // For redirection after successful signup
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,14 +13,7 @@ function Signup() {
     privacy: false,
   });
 
-  const [errors, setErrors] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    password: '',
-    confirmPassword: '',
-    privacy: '',
-  });
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -29,34 +23,45 @@ function Signup() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
 
-    let newErrors = {};
-
-    if (!formData.name) newErrors.name = 'Name is required.';
-    if (!formData.email) newErrors.email = 'Email is required.';
-    if (!formData.phone) newErrors.phone = 'Phone number is required.';
-    if (!formData.password) newErrors.password = 'Password is required.';
-    if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = 'Passwords do not match.';
-    }
     if (!formData.privacy) {
-      newErrors.privacy = 'Please agree to the privacy policy.';
+      setError('You must agree to the privacy policy.');
+      return;
     }
 
-    setErrors(newErrors);
+    if (formData.password !== formData.confirmPassword) {
+      setError('Passwords do not match.');
+      return;
+    }
 
-    if (Object.keys(newErrors).length === 0) {
-      console.log('Form data:', formData);
+    try {
+      const response = await fetch('/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Account created:', data);
+        navigate('/login'); // Redirect to login page after signup
+      } else {
+        const errorData = await response.json();
+        setError(errorData.message);
+      }
+    } catch (error) {
+      setError('Error creating account. Please try again.');
     }
   };
 
   return (
     <div className="signup">
-      <div className="signup-card">
-        <div id="signup-logo">
-          <Link to='/'><img src={logo} className="signup-logo" alt="" /></Link>
+      <div className='signup-card'>
+        <div id='signup-logo'>
+          <img src={logo} className='signup-logo' alt='logo' />
           <p>Create An Account</p>
         </div>
         <form onSubmit={handleSubmit}>
@@ -67,12 +72,9 @@ function Signup() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              style={{ borderColor: errors.name ? 'red' : 'grey' }}
               required
             />
-            {errors.name && <p className="error-message">{errors.name}</p>}
           </div>
-
           <div>
             <label>Email:</label><br />
             <input
@@ -80,12 +82,9 @@ function Signup() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              style={{ borderColor: errors.email ? 'red' : 'grey' }}
               required
             />
-            {errors.email && <p className="error-message">{errors.email}</p>}
           </div>
-
           <div>
             <label>Phone Number:</label><br />
             <input
@@ -93,12 +92,9 @@ function Signup() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              style={{ borderColor: errors.phone ? 'red' : 'grey' }}
               required
             />
-            {errors.phone && <p className="error-message">{errors.phone}</p>}
           </div>
-
           <div>
             <label>Password:</label><br />
             <input
@@ -106,12 +102,9 @@ function Signup() {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              style={{ borderColor: errors.password ? 'red' : 'grey' }}
               required
             />
-            {errors.password && <p className="error-message">{errors.password}</p>}
           </div>
-
           <div>
             <label>Confirm Password:</label><br />
             <input
@@ -119,12 +112,9 @@ function Signup() {
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              style={{ borderColor: errors.confirmPassword ? 'red' : 'grey' }}
               required
             />
-            {errors.confirmPassword && <p className="error-message">{errors.confirmPassword}</p>}
           </div>
-
           <div>
             <label className="privacy-checkbox">
               <input
@@ -133,16 +123,14 @@ function Signup() {
                 checked={formData.privacy}
                 onChange={handleChange}
                 required
-              />
-              I agree to the privacy policy
+              /> I agree to the privacy policy
             </label>
-            {errors.privacy && <p className="error-message">{errors.privacy}</p>}
           </div>
-
-          <button type="submit">Signup</button>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          <button type="submit">Sign Up</button>
         </form>
-        <div className="links">
-          <p>Already have an account? <Link to="/login">Login</Link></p>
+        <div className='links'>
+          <p>Already have an account?<Link to='/login'> Login</Link></p>
         </div>
       </div>
     </div>
