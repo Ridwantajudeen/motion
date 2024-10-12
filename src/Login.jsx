@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from './motion-logo.png'; // Ensure this path is correct
 import { Link, useNavigate } from 'react-router-dom';
-import { auth } from './firebase'; // Import Firebase auth
+import { auth } from './firebase.js'; // Import Firebase auth
 import { signInWithEmailAndPassword } from 'firebase/auth'; // Firebase method for signing in
 
 function Login() {
