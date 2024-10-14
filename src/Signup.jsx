@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import logo from './motion-logo.png'; // Ensure this path is correct
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from './firebase'; // Import Firebase auth
-import { createUserWithEmailAndPassword } from 'firebase/auth'; // Firebase method to create a user
+import { createUserWithEmailAndPassword, updateProfile, sendEmailVerification } from 'firebase/auth'; // Firebase method to create a user
 
 function Signup() {
   const navigate = useNavigate(); // For redirection after successful signup
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
     password: '',
@@ -16,6 +17,7 @@ function Signup() {
   });
 
   const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -44,8 +46,19 @@ function Signup() {
       const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
       const user = userCredential.user;
 
-      console.log('Account created:', user);
+      // Update the user's profile with first and last name
+      await updateProfile(user, {
+        displayName: `${formData.firstName} ${formData.lastName}`
+      });
+
+      // Send email verification
+      await sendEmailVerification(user);
+      
+      setSuccessMessage('Account created. Please check your email to verify your account.');
+      
+      // Optionally, navigate to a "check email" page or login page after showing a message
       navigate('/login'); // Redirect to login page after signup
+
     } catch (error) {
       setError(error.message); // Handle errors from Firebase
     }
@@ -60,11 +73,21 @@ function Signup() {
         </div>
         <form onSubmit={handleSubmit}>
           <div>
-            <label>Name:</label><br />
+            <label>First Name:</label><br />
             <input
               type="text"
-              name="name"
-              value={formData.name}
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label>Last Name:</label><br />
+            <input
+              type="text"
+              name="lastName"
+              value={formData.lastName}
               onChange={handleChange}
               required
             />
@@ -121,6 +144,7 @@ function Signup() {
             </label>
           </div>
           {error && <p style={{ color: 'red' }}>{error}</p>}
+          {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
           <button type="submit">Sign Up</button>
         </form>
         <div className='links'>
