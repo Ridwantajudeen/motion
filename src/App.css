@@ -542,5 +542,18 @@ height: 25px;
   margin-top: 10px;
 }
 
+.restaurant-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.restaurant-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  width: 200px; /* Adjust as needed */
+  text-align: center;
+}
 
 

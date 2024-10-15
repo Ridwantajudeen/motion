@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import logo from './dashboard/images/motion-logo.png';
-import { auth } from './firebase'; 
-import { onAuthStateChanged, sendEmailVerification } from 'firebase/auth';
+import { auth, firestore } from './firebase'; 
+import { onAuthStateChanged, sendEmailVerification } from 'firebase/auth'; // Import email verification
+import { collection, getDocs } from 'firebase/firestore'; // Import Firestore functions
 
 function UserDashboard() {
   const [user, setUser] = useState(null);
   const [isEmailVerified, setIsEmailVerified] = useState(false);
+  const [restaurants, setRestaurants] = useState([]); // State to hold restaurant data
   const [resendMessage, setResendMessage] = useState('');
 
   useEffect(() => {
@@ -19,6 +22,21 @@ function UserDashboard() {
     });
 
     return () => unsubscribe(); // Cleanup subscription on unmount
+  }, []);
+
+  // Fetch restaurants from Firestore
+  useEffect(() => {
+    const fetchRestaurants = async () => {
+      const restaurantCollection = collection(firestore, 'restaurants');
+      const restaurantSnapshot = await getDocs(restaurantCollection);
+      const restaurantList = restaurantSnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setRestaurants(restaurantList);
+    };
+
+    fetchRestaurants();
   }, []);
 
   const getFirstName = (displayName) => {
@@ -45,9 +63,19 @@ function UserDashboard() {
         isEmailVerified ? (
           <div>
             <h1>Welcome, {getFirstName(user.displayName)}!</h1>
-            {/* Additional content visible only to verified users */}
-            <div className="additional-content">
-              
+            <h2>Available Restaurants</h2>
+            <div className="restaurant-cards">
+              {restaurants.map((restaurant) => (
+                <div key={restaurant.id} className="restaurant-card">
+                  <h3>{restaurant.restaurantName}</h3>
+                  <img src={restaurant.imageUrl || "default_image_url.jpg"} alt={restaurant.restaurantName} />
+                  <p>Opening Hours: {restaurant.openingHours}</p>
+                  {/* Use Link to navigate to the restaurant's menu */}
+                  <Link to={`/menu/${restaurant.id}`} className="view-menu-button">
+                    View Menu
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         ) : (
