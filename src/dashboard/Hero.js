@@ -5,6 +5,7 @@ import fast from './images/food-delivery.png'
 import call from './images/help-call.png'
 import range from './images/distance.png'
 import pay from './images/cashless-payment.png'
+import { Link } from 'react-router-dom';
 
 function Hero(){
     return(
@@ -25,7 +26,7 @@ function Hero(){
                 <p className='restaurant'>Take your food and pastries beyond boundaries by registering
                  your restaurant and catering with us. Give people the opportunity to taste your delicacy 
                 </p><br />
-                <a href='/#'>Register now </a>
+                <Link to='restaurant-signup'>Register now </Link>
 
             </div>
             <div className='card'>

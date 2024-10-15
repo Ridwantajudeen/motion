@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import logo from './dashboard/images/motion-logo.png';
 import { auth } from './firebase'; 
 import { onAuthStateChanged, sendEmailVerification } from 'firebase/auth';
 
@@ -37,9 +38,18 @@ function UserDashboard() {
 
   return (
     <div className="dashboard">
+      <div>
+        <img src={logo} className="logo" alt="logo" />
+      </div>
       {user ? (
         isEmailVerified ? (
-          <h1>Welcome, {getFirstName(user.displayName)}!</h1>
+          <div>
+            <h1>Welcome, {getFirstName(user.displayName)}!</h1>
+            {/* Additional content visible only to verified users */}
+            <div className="additional-content">
+              
+            </div>
+          </div>
         ) : (
           <div>
             <h1>Please verify your email to access the dashboard.</h1>
